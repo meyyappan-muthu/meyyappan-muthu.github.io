@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Meyyappan Muthu - Staff Software Engineer specializing in platform engineering, distributed systems, and AI-enabled applications">
     <title>Meyyappan Muthu - Staff Software Engineer</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Simple Icons CDN for tech logos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/simpleicons.svg">
@@ -56,7 +60,7 @@
     <section id="home" class="hero">
         <!-- Optional: Add presentation photo as background -->
         <div class="hero-bg-overlay"></div>
-        <div class="hero-bg-image" style="background-image: url('presentation-bg.jpg');"></div>
+        <div class="hero-bg-image" style="background-image: url('mey_bg.jpg');"></div>
         
         <div class="container">
             <div class="hero-content">
@@ -168,23 +172,12 @@
                         constraints and the business outcomes.
                     </p>
                 </div>
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <div class="highlight-number">12+</div>
-                        <div class="highlight-label">Years Experience</div>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-number">3</div>
-                        <div class="highlight-label">Major Organizations</div>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-number">50+</div>
-                        <div class="highlight-label">Projects Delivered</div>
-                    </div>
-                    <div class="highlight-info">
-                        <h3>📍 Current Status</h3>
-                        <p>Relocating to Regional NSW, Australia</p>
-                        <p class="visa-info">Subclass 491 Visa • Full Work Rights</p>
+                <div class="about-image-container">
+                    <img src="mey_bg.jpg" alt="Meyyappan Muthu" class="about-image">
+                    <div class="about-image-overlay">
+                        <div class="about-badge">
+                            <p>Platform Engineering • Cloud • AI</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,41 +194,75 @@
             </p>
             
             <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-number">01</div>
+                <div class="expertise-card card-platform">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="40" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <rect x="28" y="40" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <rect x="48" y="40" width="8" height="16" rx="2" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <rect x="8" y="24" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="28" y="24" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="48" y="24" width="8" height="12" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="18" y="8" width="28" height="12" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                        </svg>
+                    </div>
                     <h3>Platform Engineering</h3>
-                    <p>
-                        Build common platform services used across product lines, defining service boundaries, 
-                        API contracts, and deployment models that support both multi-tenant SaaS and 
-                        customer-hosted environments.
-                    </p>
+                    <p>Build and evolve common platform services used across product lines, defining service boundaries, API contracts, data ownership, and deployment models that support both multi-tenant SaaS and customer-hosted environments.</p>
                 </div>
 
-                <div class="expertise-card">
-                    <div class="expertise-number">02</div>
+                <div class="expertise-card card-distributed">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="12" r="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <circle cx="12" cy="32" r="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <circle cx="52" cy="32" r="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <circle cx="32" cy="52" r="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.2"/>
+                            <line x1="27" y1="16" x2="17" y2="28" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="37" y1="16" x2="47" y2="28" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="18" y1="32" x2="26" y2="32" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="38" y1="32" x2="46" y2="32" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="27" y1="48" x2="17" y2="36" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="37" y1="48" x2="47" y2="36" stroke="currentColor" stroke-width="2.5"/>
+                        </svg>
+                    </div>
                     <h3>Distributed Systems</h3>
-                    <p>
-                        Design and implement event-driven microservices using asynchronous messaging patterns 
-                        across AWS and Azure, balancing scalability, resilience, and operational complexity.
-                    </p>
+                    <p>Design and implement event-driven microservices using asynchronous messaging patterns across AWS and Azure, balancing scalability, resilience, and operational complexity at scale.</p>
                 </div>
 
-                <div class="expertise-card">
-                    <div class="expertise-number">03</div>
+                <div class="expertise-card card-legacy">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8 L32 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M40 12 L32 8 L24 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" opacity="0.2"/>
+                            <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                            <path d="M48 24 L52 20 M48 40 L52 44 M16 24 L12 20 M16 40 L12 44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M32 40 L32 56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M40 52 L32 56 L24 52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" opacity="0.2"/>
+                        </svg>
+                    </div>
                     <h3>Legacy Modernisation</h3>
-                    <p>
-                        Lead the transformation of monolithic desktop applications into cloud-ready, 
-                        multi-tenant SaaS platforms using strangler patterns and domain-aligned service decomposition.
-                    </p>
+                    <p>Lead the transformation of monolithic desktop applications into cloud-ready, multi-tenant SaaS platforms using strangler patterns and domain-aligned service decomposition for sustainable evolution.</p>
                 </div>
 
-                <div class="expertise-card">
-                    <div class="expertise-number">04</div>
+                <div class="expertise-card card-ai">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="28" r="16" stroke="currentColor" stroke-width="2.5" fill="currentColor" opacity="0.1"/>
+                            <path d="M24 24 Q24 20 28 20 Q32 20 32 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M40 24 Q40 20 36 20 Q32 20 32 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="26" cy="28" r="2" fill="currentColor"/>
+                            <circle cx="38" cy="28" r="2" fill="currentColor"/>
+                            <path d="M28 34 Q32 36 36 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="20" y1="48" x2="28" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="44" y1="48" x2="36" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="32" y1="44" x2="32" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="20" cy="48" r="3" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.2"/>
+                            <circle cx="44" cy="48" r="3" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.2"/>
+                            <circle cx="32" cy="52" r="3" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.2"/>
+                        </svg>
+                    </div>
                     <h3>AI-Enabled Systems</h3>
-                    <p>
-                        Integrate RAG-based architectures, LangChain workflows, and MCP-style tools into existing 
-                        platforms, extending capabilities with governed, context-aware automation.
-                    </p>
+                    <p>Integrate RAG-based architectures, LangChain workflows, and MCP-style tools into existing platforms, extending capabilities with governed, context-aware automation that enhances rather than replaces systems.</p>
                 </div>
             </div>
         </div>
@@ -411,24 +438,22 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="experience-header">
-                            <img src="logos/trimble_logo.png" alt="Trimble Inc." class="company-logo">
                             <div class="experience-meta">
                                 <span class="timeline-date">Aug 2018 – Present</span>
                                 <h3>Trimble Inc.</h3>
                                 <h4>Staff Software Engineer • Chennai, India</h4>
+                                <p class="experience-summary">
+                                    Platform engineering across AWS & Azure • AI integration (RAG, LangChain) • Multi-tenant SaaS modernization
+                                </p>
+                                <button class="read-more-pill" onclick="toggleExpand(this)">
+                                    <span class="pill-text">Read More</span>
+                                    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </button>
                             </div>
+                            <img src="logos/trimble_logo.png" alt="Trimble Inc." class="company-logo">
                         </div>
-                        
-                        <div class="experience-summary">
-                            <p>Built distributed platform services across AWS & Azure • Integrated AI capabilities (RAG, LangChain) • Modernized monolith to multi-tenant SaaS • Led technical direction and mentorship</p>
-                        </div>
-                        
-                        <button class="read-more-btn" onclick="toggleExpand(this)">
-                            <span class="btn-text">Read More</span>
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </button>
                         
                         <div class="expandable-content">
                             <div class="experience-section">
@@ -482,24 +507,22 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="experience-header">
-                            <img src="logos/conduent_logo.svg" alt="Conduent" class="company-logo">
                             <div class="experience-meta">
                                 <span class="timeline-date">Nov 2016 – Aug 2018</span>
                                 <h3>Conduent (formerly Xerox)</h3>
                                 <h4>Senior Software Engineer • Chennai, India</h4>
+                                <p class="experience-summary">
+                                    Agile Court 8.0 for 50+ US courts • .NET Framework to Core migration • 100K+ cases optimization
+                                </p>
+                                <button class="read-more-pill" onclick="toggleExpand(this)">
+                                    <span class="pill-text">Read More</span>
+                                    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </button>
                             </div>
+                            <img src="logos/conduent_logo.svg" alt="Conduent" class="company-logo">
                         </div>
-                        
-                        <div class="experience-summary">
-                            <p>Developed Agile Court 8.0 for 50+ US courts • Migrated .NET Framework to .NET Core • Optimized for 100,000+ active cases</p>
-                        </div>
-                        
-                        <button class="read-more-btn" onclick="toggleExpand(this)">
-                            <span class="btn-text">Read More</span>
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </button>
                         
                         <div class="expandable-content">
                             <ul>
@@ -530,24 +553,22 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="experience-header">
-                            <img src="logos/span_logo.png" alt="Span Technology Services" class="company-logo">
                             <div class="experience-meta">
                                 <span class="timeline-date">May 2013 – Nov 2016</span>
                                 <h3>Span Technology Services</h3>
                                 <h4>Senior Software Engineer • Chennai, India</h4>
+                                <p class="experience-summary">
+                                    IRS e-filing for 10K+ clients • 500K+ annual tax submissions • Secure multi-tenant SaaS
+                                </p>
+                                <button class="read-more-pill" onclick="toggleExpand(this)">
+                                    <span class="pill-text">Read More</span>
+                                    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6"/>
+                                    </svg>
+                                </button>
                             </div>
+                            <img src="logos/span_logo.png" alt="Span Technology Services" class="company-logo">
                         </div>
-                        
-                        <div class="experience-summary">
-                            <p>Built IRS e-filing engine for 10,000+ clients • Processed 500,000+ annual tax submissions • Implemented secure multi-tenant architecture</p>
-                        </div>
-                        
-                        <button class="read-more-btn" onclick="toggleExpand(this)">
-                            <span class="btn-text">Read More</span>
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </button>
                         
                         <div class="expandable-content">
                             <ul>

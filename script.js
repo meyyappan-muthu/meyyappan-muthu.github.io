@@ -155,14 +155,17 @@ if (heroStats) {
 // Expandable Experience Sections
 // ==========================================
 window.toggleExpand = function(button) {
-    const content = button.nextElementSibling;
+    // Find the timeline-content container
+    const timelineContent = button.closest('.timeline-content');
+    const expandableContent = timelineContent.querySelector('.expandable-content');
+    
     button.classList.toggle('expanded');
-    content.classList.toggle('expanded');
+    expandableContent.classList.toggle('expanded');
     
     // Update button text
-    const btnText = button.querySelector('.btn-text');
-    if (content.classList.contains('expanded')) {
-        btnText.textContent = 'Read Less';
+    const btnText = button.querySelector('.pill-text');
+    if (expandableContent.classList.contains('expanded')) {
+        btnText.textContent = 'Read';
     } else {
         btnText.textContent = 'Read More';
     }
@@ -448,3 +451,4 @@ if (window.performance && window.performance.timing) {
         }, 0);
     });
 }
+
