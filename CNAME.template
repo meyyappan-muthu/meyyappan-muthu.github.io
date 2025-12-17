@@ -1,0 +1,19 @@
+# CNAME Template for Custom Domain
+# 
+# To use a custom domain with GitHub Pages:
+# 1. Buy your domain from a registrar (Namecheap, Google Domains, etc.)
+# 2. Rename this file from "CNAME.template" to "CNAME" (no extension)
+# 3. Replace the example below with YOUR actual domain
+# 4. Configure DNS records at your domain registrar (see DEPLOYMENT.md)
+# 5. Commit and push to GitHub
+# 6. Enable custom domain in GitHub Pages settings
+#
+# Example (remove this comment and use your domain):
+# meyyappanmuthu.com
+#
+# OR with www subdomain:
+# www.meyyappanmuthu.com
+#
+# DO NOT include http:// or https://
+# Just the domain name
+

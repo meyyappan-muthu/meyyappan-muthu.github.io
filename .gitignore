@@ -1,0 +1,58 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Development/testing files
+test.html
+test.css
+test.js
+draft*.html
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Environment files (if you add any)
+.env
+.env.local
+
+# Build output (if you add a build process)
+dist/
+build/
+.cache/
+
+# Dependencies (if you add npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Optional: Uncomment if you don't want to track source images
+# source-images/
+# *.psd
+# *.ai
+# *.sketch
+

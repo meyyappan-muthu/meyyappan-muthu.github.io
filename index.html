@@ -3,197 +3,659 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <meta name="description" content="Meyyappan Muthu - Staff Software Engineer specializing in platform engineering, distributed systems, and AI-enabled applications">
+    <title>Meyyappan Muthu - Staff Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Simple Icons CDN for tech logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/simpleicons.svg">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Theme Toggle Button (Fixed) -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="profile-photo.jpg" alt="Meyyappan Muthu" class="nav-logo-image">
+                <span class="nav-logo-text">Meyyappan Muthu</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="Meyyappan_Resume - 2025 - AU Format -4.pdf" class="btn-nav" target="_blank">Resume</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Presentation Background -->
+    <section id="home" class="hero">
+        <!-- Optional: Add presentation photo as background -->
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-bg-image" style="background-image: url('presentation-bg.jpg');"></div>
+        
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Your Name</h1>
-                <p class="hero-subtitle">
-                    AI Engineer | Full Stack Developer | Problem Solver | 
-                    Building the future with code | Passionate about AI & Machine Learning
+                <div class="hero-image-wrapper">
+                    <img src="profile-photo.jpg" alt="Meyyappan Muthu" class="hero-image">
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="wave">👋</span> Hi, I'm 
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="cursor">|</span>
+                </h1>
+                
+                <p class="hero-role">Staff Software Engineer</p>
+                
+                <p class="hero-description">
+                    I architect and deliver distributed, event-driven platform systems that serve multiple product lines at scale. 
+                    With 12+ years building cloud-native applications, modernising legacy systems, and integrating AI capabilities 
+                    into production platforms, I bridge technical depth with strategic platform thinking.
                 </p>
-                <a href="#contact" class="cta-button">Get in touch</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Showcase Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects 🚀</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">AI-Powered API</h3>
-                        <p class="project-description">
-                            Built a FastAPI-based sentiment analysis API using machine learning. 
-                            Handles 1000+ requests per minute with 95% accuracy.
-                        </p>
-                        <a href="#" class="project-link">View Project →</a>
+                <!-- Animated Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Data Pipeline System</h3>
-                        <p class="project-description">
-                            Designed and implemented a scalable data pipeline processing 10GB+ 
-                            daily data with Python, MongoDB, and automated workflows.
-                        </p>
-                        <a href="#" class="project-link">View Project →</a>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Organizations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">% Cloud Native</span>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Machine Learning Model</h3>
-                        <p class="project-description">
-                            Developed a predictive model using TensorFlow achieving 92% accuracy. 
-                            Deployed with Docker and integrated with REST API.
-                        </p>
-                        <a href="#" class="project-link">View Project →</a>
+                <!-- Code Block Visual -->
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-dot"></span>
+                        <span class="code-dot"></span>
+                        <span class="code-dot"></span>
+                        <span class="code-file">engineer.cs</span>
                     </div>
+                    <pre class="code-content"><code><span class="code-comment">// Staff Platform Engineer</span>
+<span class="code-keyword">const</span> <span class="code-variable">engineer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Meyyappan Muthu'</span>,
+  <span class="code-property">role</span>: <span class="code-string">'Staff Engineer'</span>,
+  <span class="code-property">expertise</span>: [<span class="code-string">'Platform Engineering'</span>, <span class="code-string">'Distributed Systems'</span>, <span class="code-string">'AI Integration'</span>],
+  <span class="code-property">stack</span>: [<span class="code-string">'.NET'</span>, <span class="code-string">'Angular'</span>, <span class="code-string">'MongoDB'</span>, <span class="code-string">'AWS'</span>, <span class="code-string">'Azure'</span>],
+  <span class="code-property">focus</span>: <span class="code-string">'Cloud-Native Architecture'</span>,
+  <span class="code-property">location</span>: <span class="code-string">'Relocating to NSW, Australia'</span>
+};</code></pre>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Web Automation Tool</h3>
-                        <p class="project-description">
-                            Created a Python-based automation tool that saves 10+ hours weekly. 
-                            Features include web scraping, data processing, and reporting.
-                        </p>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View Experience</a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">TensorFlow</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">MongoDB</span>
-                    </div>
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/meyyappan-muthu" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/meyyappan-muthu" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:meyy91@gmail.com" class="social-icon" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Highlighted Post Section -->
-    <section class="highlight-post">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="post-card">
-                <div class="post-header">
-                    <h3>Latest Achievement 🎉</h3>
-                </div>
-                <div class="post-content">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
                     <p>
-                        Just completed an intensive AI Engineering bootcamp! Built 10+ projects 
-                        covering everything from Python basics to advanced FastAPI applications 
-                        and machine learning models.
+                        I'm a hands-on Staff Software Engineer who has grown into platform and architectural leadership. 
+                        I still write code, review pull requests, and debug production issues—but I also shape 
+                        service boundaries, influence roadmaps, and mentor teams through complex migrations.
                     </p>
                     <p>
-                        Key accomplishments:
+                        My career has been defined by bridging technical depth with strategic platform thinking: 
+                        modernising legacy systems without disrupting operations, building distributed services that 
+                        balance consistency with autonomy, and integrating emerging technologies like AI in ways that 
+                        are pragmatic and production-ready.
                     </p>
-                    <ul>
-                        <li>Mastered Python fundamentals and advanced concepts</li>
-                        <li>Built production-ready APIs with FastAPI</li>
-                        <li>Implemented machine learning solutions</li>
-                        <li>Contributed to open-source projects</li>
-                    </ul>
-                    <a href="#" class="post-link">Read Full Story</a>
+                    <p>
+                        I work across AWS and Azure, lead through design discussions and architecture reviews, 
+                        and believe that great platform engineering comes from understanding both the technical 
+                        constraints and the business outcomes.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <h3>🎯 Current Focus</h3>
+                        <p>Bridging platform engineering and AI-driven capabilities, ensuring reliability, governance, and long-term maintainability.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>📍 Location</h3>
+                        <p>Based in India, relocating to Regional NSW, Australia under Subclass 491 visa with full work rights.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>💼 Open To</h3>
+                        <p>Staff/Lead Software Engineering roles in platform engineering, distributed systems, and cloud-native development.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section class="resume-section">
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
         <div class="container">
-            <a href="#" class="download-button">📄 Download Resume</a>
+            <h2 class="section-title">What I Do</h2>
+            <p class="section-intro">
+                I design platform systems that balance architectural consistency with product autonomy, 
+                ensuring common services scale reliably across teams and environments.
+            </p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Platform Engineering</h3>
+                    <p>
+                        Build common platform services used across product lines, defining service boundaries, 
+                        API contracts, and deployment models that support both multi-tenant SaaS and 
+                        customer-hosted environments.
+                    </p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="2" x2="12" y2="6"/>
+                            <line x1="12" y1="18" x2="12" y2="22"/>
+                            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+                            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+                        </svg>
+                    </div>
+                    <h3>Distributed Systems</h3>
+                    <p>
+                        Design and implement event-driven microservices using asynchronous messaging patterns 
+                        across AWS and Azure, balancing scalability, resilience, and operational complexity.
+                    </p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Legacy Modernisation</h3>
+                    <p>
+                        Lead the transformation of monolithic desktop applications into cloud-ready, 
+                        multi-tenant SaaS platforms using strangler patterns and domain-aligned service decomposition.
+                    </p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Enabled Systems</h3>
+                    <p>
+                        Integrate RAG-based architectures, LangChain workflows, and MCP-style tools into existing 
+                        platforms, extending capabilities with governed, context-aware automation.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Tech Stack Section with Logos -->
+    <section id="tech-stack" class="tech-stack">
         <div class="container">
-            <a href="mailto:your.email@gmail.com" class="chat-button">💬 Chat with me</a>
+            <h2 class="section-title">Technology Stack</h2>
+            <p class="section-intro">
+                Technologies and platforms I work with to deliver scalable, production-ready solutions.
+            </p>
+
+            <!-- Tech Categories -->
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Languages & Frameworks</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                            <span>C# / .NET</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                            <span>Angular</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>AI & Intelligent Systems</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon-svg">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                            </svg>
+                            <span>LangChain</span>
+                        </div>
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon-svg">
+                                <circle cx="12" cy="12" r="10"/>
+                            </svg>
+                            <span>RAG</span>
+                        </div>
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon-svg">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            </svg>
+                            <span>Vector DB</span>
+                        </div>
+                        <div class="tech-item">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="tech-icon-svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            </svg>
+                            <span>LLM Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Databases</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                            <span>SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                            <span>Azure</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated Marquee of All Tech -->
+            <div class="tech-marquee-wrapper">
+                <div class="tech-marquee">
+                    <div class="tech-marquee-content">
+                        <span>.NET</span>
+                        <span>C#</span>
+                        <span>Angular</span>
+                        <span>TypeScript</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>MongoDB</span>
+                        <span>SQL Server</span>
+                        <span>AWS Lambda</span>
+                        <span>Azure Functions</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>LangChain</span>
+                        <span>RAG</span>
+                        <span>Vector DB</span>
+                        <span>Microservices</span>
+                        <span>Event-Driven</span>
+                        <span>RESTful APIs</span>
+                        <span>CI/CD</span>
+                        <span>Git</span>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="tech-marquee-content" aria-hidden="true">
+                        <span>.NET</span>
+                        <span>C#</span>
+                        <span>Angular</span>
+                        <span>TypeScript</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>MongoDB</span>
+                        <span>SQL Server</span>
+                        <span>AWS Lambda</span>
+                        <span>Azure Functions</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>LangChain</span>
+                        <span>RAG</span>
+                        <span>Vector DB</span>
+                        <span>Microservices</span>
+                        <span>Event-Driven</span>
+                        <span>RESTful APIs</span>
+                        <span>CI/CD</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-intro">
+                Architectural decisions and outcomes from real platform engineering challenges.
+            </p>
+
+            <div class="timeline">
+                <!-- Trimble Inc. -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Aug 2018 – Present</span>
+                        <h3>Trimble Inc.</h3>
+                        <h4>Staff Software Engineer • Chennai, India</h4>
+                        
+                        <button class="read-more-btn" onclick="toggleExpand(this)">
+                            <span class="btn-text">Read More</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="expandable-content">
+                            <div class="experience-section">
+                                <h5>Platform Engineering & Cloud-Native Systems</h5>
+                                <ul>
+                                    <li>Built and evolved distributed, event-driven common platform services using .NET microservices, MongoDB, and Angular, deployed across AWS and Azure</li>
+                                    <li>Modernised legacy monolithic desktop application into multi-tenant, cloud-ready SaaS platform using strangler pattern</li>
+                                    <li>Designed deployment strategies for both multi-tenant SaaS and single-tenant customer-hosted environments</li>
+                                    <li>Implemented serverless workloads using AWS Lambda and Azure Functions with CI/CD pipelines</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-section">
+                                <h5>AI Enablement & Intelligent Capabilities</h5>
+                                <ul>
+                                    <li>Built AI agents using RAG and LLM-based workflows integrated with existing platform services</li>
+                                    <li>Implemented LangChain for agent orchestration with tool execution and prompt chaining</li>
+                                    <li>Designed MCP-style tools exposing application endpoints as callable interfaces for AI agents</li>
+                                    <li>Led adoption of Cursor AI across engineering team with security guardrails and best practices</li>
+                                </ul>
+                            </div>
+
+                            <div class="experience-section">
+                                <h5>Technical Leadership</h5>
+                                <ul>
+                                    <li>Influenced platform technical direction through architecture reviews and modernisation initiatives</li>
+                                    <li>Partnered with Product Management and UX to translate business requirements into scalable solutions</li>
+                                    <li>Mentored engineers across levels with technical guidance and design feedback</li>
+                                </ul>
+                            </div>
+
+                            <ul class="tech-tags">
+                                <li>.NET Core</li>
+                                <li>MongoDB</li>
+                                <li>Angular</li>
+                                <li>AWS Lambda</li>
+                                <li>Azure Functions</li>
+                                <li>LangChain</li>
+                                <li>RAG</li>
+                                <li>Event-Driven Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conduent (formerly Xerox) -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Nov 2016 – Aug 2018</span>
+                        <h3>Conduent (formerly Xerox)</h3>
+                        <h4>Senior Software Engineer • Chennai, India</h4>
+                        
+                        <button class="read-more-btn" onclick="toggleExpand(this)">
+                            <span class="btn-text">Read More</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="expandable-content">
+                            <ul>
+                                <li>Contributed to Agile Court 8.0, a mission-critical judicial case management system serving 50+ US State and County courts</li>
+                                <li>Participated in migration from .NET Framework to .NET Core, modernising backend into RESTful APIs</li>
+                                <li>Designed Angular-based UI modules with .NET Core backend and OAuth/claims-based authentication</li>
+                                <li>Optimised application performance for large datasets (100,000+ active cases)</li>
+                                <li>Worked in Agile/Scrum teams with cross-functional collaboration</li>
+                            </ul>
+
+                            <ul class="tech-tags">
+                                <li>.NET Core</li>
+                                <li>Angular</li>
+                                <li>SQL Server</li>
+                                <li>OAuth</li>
+                                <li>RESTful APIs</li>
+                                <li>Agile/Scrum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Span Technology Services -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 2013 – Nov 2016</span>
+                        <h3>Span Technology Services</h3>
+                        <h4>Senior Software Engineer • Chennai, India</h4>
+                        
+                        <button class="read-more-btn" onclick="toggleExpand(this)">
+                            <span class="btn-text">Read More</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="expandable-content">
+                            <ul>
+                                <li>Designed and built IRS e-filing engine supporting federal tax compliance for 10,000+ business clients</li>
+                                <li>Converted customer data into IRS-mandated formats (MeF, FIRE, AIR) for various tax forms</li>
+                                <li>Developed multi-tenant web application handling 500,000+ annual submissions</li>
+                                <li>Implemented secure data transmission and encryption for IRS web service integrations</li>
+                                <li>Built RESTful backend services for iOS and Android applications</li>
+                                <li>Led design of e-filing interview workflow engine with complex tax rules and validations</li>
+                            </ul>
+
+                            <ul class="tech-tags">
+                                <li>.NET Framework</li>
+                                <li>SQL Server</li>
+                                <li>RESTful APIs</li>
+                                <li>Encryption</li>
+                                <li>Multi-Tenant SaaS</li>
+                                <li>IRS Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-intro">
+                Available for Staff/Lead Software Engineering roles in platform engineering, 
+                distributed systems, and cloud-native development.
+            </p>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required rows="5" placeholder="Tell me about your opportunity..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Message</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Cards -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:meyy91@gmail.com">meyy91@gmail.com</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                            </svg>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://linkedin.com/in/meyyappan-muthu" target="_blank">View Profile</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                        </div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/meyyappan-muthu" target="_blank">View Repos</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3>Resume</h3>
+                        <a href="Meyyappan_Resume - 2025 - AU Format -4.pdf" target="_blank">Download PDF</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:your.email@gmail.com" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
-                        </svg>
-                    </a>
-                </div>
-                <a href="mailto:your.email@gmail.com" class="footer-email">your.email@gmail.com</a>
-                <p class="footer-copyright">© 2025 Your Name. Crafted with care.</p>
-            </div>
+            <p>&copy; 2025 Meyyappan Muthu. Staff Software Engineer. Built in India with ❤️</p>
+            <p class="footer-location">📍 Relocating to Regional NSW, Australia | Subclass 491 Visa</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
