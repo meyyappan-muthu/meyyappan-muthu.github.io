@@ -693,98 +693,6 @@ section {
     color: var(--color-text-light);
 }
 
-/* ==========================================
-   Zigzag Layout (Alternating Text & Images)
-   ========================================== */
-.section-zigzag {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-2xl);
-    align-items: center;
-    margin-bottom: var(--spacing-3xl);
-}
-
-.section-zigzag.reverse {
-    direction: rtl;
-}
-
-.section-zigzag.reverse > * {
-    direction: ltr;
-}
-
-.zigzag-content {
-    padding: var(--spacing-lg);
-}
-
-.zigzag-content h2 {
-    margin-bottom: var(--spacing-md);
-    font-size: 2.5rem;
-}
-
-.zigzag-content h3 {
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.zigzag-content p {
-    font-size: var(--font-size-large);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-}
-
-.zigzag-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.zigzag-content ul li {
-    padding-left: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-    line-height: 1.7;
-}
-
-.zigzag-content ul li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--color-primary);
-    font-weight: bold;
-}
-
-.zigzag-image {
-    width: 100%;
-    height: 500px;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-xl);
-    position: relative;
-}
-
-.zigzag-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-speed-slow);
-}
-
-.zigzag-image:hover img {
-    transform: scale(1.05);
-}
-
-.zigzag-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, 
-        rgba(37, 99, 235, 0.1), 
-        rgba(14, 165, 233, 0.1));
-    pointer-events: none;
-}
 
 /* ==========================================
    About Section
@@ -793,14 +701,22 @@ section {
     background: var(--color-background);
 }
 
-.about-content {
+.about-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-2xl);
     align-items: start;
 }
 
-.about-text p {
+.about-main .lead-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-main p {
     font-size: var(--font-size-large);
     line-height: 1.8;
     margin-bottom: var(--spacing-md);
@@ -814,10 +730,10 @@ section {
 
 .highlight-card {
     background: var(--color-background-elevated);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
+    text-align: center;
     transition: all var(--transition-speed);
 }
 
@@ -827,15 +743,48 @@ section {
     border-color: var(--color-primary);
 }
 
-.highlight-card h3 {
-    font-size: 1.125rem;
+.highlight-number {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
     margin-bottom: var(--spacing-xs);
 }
 
-.highlight-card p {
+.highlight-label {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.highlight-info {
+    background: var(--color-background-elevated);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.highlight-info h3 {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.highlight-info p {
     font-size: var(--font-size-small);
     color: var(--color-text-light);
-    margin: 0;
+    margin-bottom: var(--spacing-xs);
+}
+
+.visa-info {
+    font-size: 0.8125rem !important;
+    color: var(--color-text-muted) !important;
+    font-weight: var(--font-weight-medium);
 }
 
 /* ==========================================
@@ -853,11 +802,30 @@ section {
 }
 
 .expertise-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-xl);
     background-color: var(--color-background-elevated);
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
     transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+}
+
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-speed);
+}
+
+.expertise-card:hover::before {
+    transform: scaleX(1);
 }
 
 .expertise-card:hover {
@@ -866,21 +834,20 @@ section {
     border-color: var(--color-primary);
 }
 
-.expertise-icon {
-    width: 56px;
-    height: 56px;
+.expertise-number {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-border);
+    line-height: 1;
     margin-bottom: var(--spacing-md);
-    color: var(--color-primary);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 165, 233, 0.1));
-    border-radius: var(--border-radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: var(--font-mono);
 }
 
-.expertise-icon svg {
-    width: 32px;
-    height: 32px;
+.expertise-card:hover .expertise-number {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .expertise-card h3 {
@@ -893,20 +860,6 @@ section {
     font-size: var(--font-size-base);
     line-height: 1.7;
     color: var(--color-text-light);
-}
-
-/* ==========================================
-   Platform Impact Section
-   ========================================== */
-.platform-impact {
-    background: var(--color-background-alt);
-}
-
-/* ==========================================
-   AI Innovation Section
-   ========================================== */
-.ai-innovation {
-    background: var(--color-background);
 }
 
 /* ==========================================
@@ -1333,7 +1286,7 @@ section {
    Responsive Design
    ========================================== */
 @media (max-width: 968px) {
-    .about-content {
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1453,24 +1406,6 @@ section {
     /* Section Spacing */
     section {
         padding: var(--spacing-2xl) 0;
-    }
-
-    /* Zigzag Layout - Stack on Mobile */
-    .section-zigzag {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-
-    .section-zigzag.reverse {
-        direction: ltr;
-    }
-
-    .zigzag-image {
-        height: 300px;
-    }
-
-    .zigzag-content h2 {
-        font-size: 1.75rem;
     }
 }
 
