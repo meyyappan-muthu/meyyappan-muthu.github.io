@@ -425,6 +425,13 @@ section {
     gap: 0.5rem;
 }
 
+.hero-greeting,
+.hero-name-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
 .wave {
     display: inline-block;
     animation: wave 1.5s ease-in-out infinite;
@@ -441,7 +448,6 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    min-width: 200px;
     display: inline-block;
 }
 
@@ -1681,8 +1687,13 @@ section {
 
 /* Mobile Responsive */
 @media (max-width: 1024px) {
+    .testimonials-track {
+        gap: var(--spacing-md);
+    }
+    
     .testimonial-card {
-        flex: 0 0 calc(50% - var(--spacing-xl));
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 
@@ -1696,8 +1707,9 @@ section {
     }
 
     .testimonial-card {
-        flex: 0 0 calc(100% - var(--spacing-xl));
-        min-width: 280px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-width: auto;
         padding: var(--spacing-md);
     }
 
@@ -1962,6 +1974,20 @@ section {
     .hero-title {
         font-size: 1.75rem;
         flex-direction: column;
+        gap: 0.3rem;
+    }
+    
+    .hero-greeting {
+        display: block;
+        text-align: center;
+    }
+    
+    .hero-name-wrapper {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2rem;
+        justify-content: center;
+        width: 100%;
     }
 
     .hero-content {

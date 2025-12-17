@@ -438,14 +438,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function getCardsPerView() {
         const width = window.innerWidth;
-        if (width <= 768) return 1;
-        if (width <= 1024) return 2;
-        return 3;
+        if (width <= 1024) return 1; // One card for both mobile and tablet
+        return 3; // Three cards for desktop
     }
     
     function updateCarousel() {
         const cardWidth = cards[0].offsetWidth;
-        const gap = 24; // var(--spacing-xl)
+        // Get the actual gap from computed styles
+        const trackStyles = window.getComputedStyle(track);
+        const gap = parseInt(trackStyles.gap) || 24;
         const offset = -(currentIndex * (cardWidth + gap));
         track.style.transform = `translateX(${offset}px)`;
         
