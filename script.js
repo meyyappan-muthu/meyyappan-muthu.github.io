@@ -1,4 +1,13 @@
 // ==========================================
+// Font Loading Verification
+// ==========================================
+if (document.fonts) {
+    document.fonts.ready.then(() => {
+        console.log('✓ All fonts loaded successfully');
+    });
+}
+
+// ==========================================
 // Theme Toggle
 // ==========================================
 const themeToggle = document.getElementById('themeToggle');
@@ -107,48 +116,6 @@ function type() {
 // Start typewriter effect
 if (typewriter) {
     setTimeout(type, 500);
-}
-
-// ==========================================
-// Animated Counters
-// ==========================================
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 50; // Lower is faster
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        let count = 0;
-        
-        const updateCount = () => {
-            const increment = target / speed;
-            
-            if (count < target) {
-                count += increment;
-                counter.textContent = Math.ceil(count);
-                setTimeout(updateCount, 30);
-            } else {
-                counter.textContent = target;
-            }
-        };
-        
-        updateCount();
-    });
-}
-
-// Trigger counter animation when stats come into view
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
 }
 
 // ==========================================
@@ -452,3 +419,91 @@ if (window.performance && window.performance.timing) {
     });
 }
 
+// ==========================================
+// Testimonials Carousel
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('testimonialsTrack');
+    const prevBtn = document.getElementById('testimonialPrev');
+    const nextBtn = document.getElementById('testimonialNext');
+    const dotsContainer = document.getElementById('testimonialDots');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+    
+    const cards = track.querySelectorAll('.testimonial-card');
+    const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+    let currentIndex = 0;
+    let cardsPerView = getCardsPerView();
+    let maxIndex = Math.max(0, cards.length - cardsPerView);
+    
+    function getCardsPerView() {
+        const width = window.innerWidth;
+        if (width <= 768) return 1;
+        if (width <= 1024) return 2;
+        return 3;
+    }
+    
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 24; // var(--spacing-xl)
+        const offset = -(currentIndex * (cardWidth + gap));
+        track.style.transform = `translateX(${offset}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update button states
+        prevBtn.classList.toggle('disabled', currentIndex === 0);
+        nextBtn.classList.toggle('disabled', currentIndex >= maxIndex);
+    }
+    
+    function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+        updateCarousel();
+    }
+    
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        }
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        if (currentIndex < maxIndex) {
+            goToSlide(currentIndex + 1);
+        }
+    });
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            goToSlide(index);
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+            nextBtn.click();
+        }
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            cardsPerView = getCardsPerView();
+            maxIndex = Math.max(0, cards.length - cardsPerView);
+            currentIndex = Math.min(currentIndex, maxIndex);
+            updateCarousel();
+        }, 250);
+    });
+    
+    // Initialize
+    updateCarousel();
+});
