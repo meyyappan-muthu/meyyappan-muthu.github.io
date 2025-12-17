@@ -100,6 +100,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 /* ==========================================
@@ -546,6 +551,8 @@ section {
     font-size: 0.875rem;
     line-height: 1.6;
     overflow-x: auto;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .code-content code {
@@ -687,6 +694,99 @@ section {
 }
 
 /* ==========================================
+   Zigzag Layout (Alternating Text & Images)
+   ========================================== */
+.section-zigzag {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.section-zigzag.reverse {
+    direction: rtl;
+}
+
+.section-zigzag.reverse > * {
+    direction: ltr;
+}
+
+.zigzag-content {
+    padding: var(--spacing-lg);
+}
+
+.zigzag-content h2 {
+    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+}
+
+.zigzag-content h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.zigzag-content p {
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.zigzag-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.zigzag-content ul li {
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    line-height: 1.7;
+}
+
+.zigzag-content ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.zigzag-image {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+}
+
+.zigzag-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed-slow);
+}
+
+.zigzag-image:hover img {
+    transform: scale(1.05);
+}
+
+.zigzag-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.1), 
+        rgba(14, 165, 233, 0.1));
+    pointer-events: none;
+}
+
+/* ==========================================
    About Section
    ========================================== */
 .about {
@@ -796,6 +896,20 @@ section {
 }
 
 /* ==========================================
+   Platform Impact Section
+   ========================================== */
+.platform-impact {
+    background: var(--color-background-alt);
+}
+
+/* ==========================================
+   AI Innovation Section
+   ========================================== */
+.ai-innovation {
+    background: var(--color-background);
+}
+
+/* ==========================================
    Tech Stack Section
    ========================================== */
 .tech-stack {
@@ -864,6 +978,8 @@ section {
     padding: var(--spacing-lg) 0;
     border-radius: var(--border-radius);
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .tech-marquee {
@@ -1337,6 +1453,24 @@ section {
     /* Section Spacing */
     section {
         padding: var(--spacing-2xl) 0;
+    }
+
+    /* Zigzag Layout - Stack on Mobile */
+    .section-zigzag {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .section-zigzag.reverse {
+        direction: ltr;
+    }
+
+    .zigzag-image {
+        height: 300px;
+    }
+
+    .zigzag-content h2 {
+        font-size: 1.75rem;
     }
 }
 
