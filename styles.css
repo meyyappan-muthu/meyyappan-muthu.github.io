@@ -2162,10 +2162,10 @@ section {
     z-index: 0;
     pointer-events: none;
     background-image: 
-        linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: grid-move 20s linear infinite;
+    animation: grid-move 10s linear infinite;
 }
 
 @keyframes grid-move {

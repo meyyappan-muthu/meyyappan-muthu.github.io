@@ -1,4 +1,37 @@
 // ==========================================
+// Dynamic Years of Experience Calculator
+// ==========================================
+function calculateYearsOfExperience() {
+    const careerStartDate = new Date('2013-05-01'); // May 2013
+    const currentDate = new Date();
+    const years = currentDate.getFullYear() - careerStartDate.getFullYear();
+    const months = currentDate.getMonth() - careerStartDate.getMonth();
+    
+    // Calculate total years (adjust if months are negative)
+    let totalYears = years;
+    if (months < 0) {
+        totalYears -= 1;
+    }
+    
+    return `${totalYears}+`;
+}
+
+// Update all elements with years of experience
+function updateExperienceYears() {
+    const yearsText = calculateYearsOfExperience();
+    const elements = document.querySelectorAll('.years-experience');
+    
+    elements.forEach(element => {
+        element.textContent = yearsText;
+    });
+    
+    console.log(`✓ Experience updated: ${yearsText} years`);
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', updateExperienceYears);
+
+// ==========================================
 // Font Loading Verification
 // ==========================================
 if (document.fonts) {
