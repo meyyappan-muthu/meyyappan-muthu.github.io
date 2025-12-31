@@ -79,6 +79,27 @@
 }
 
 /* ==========================================
+   Theme-based Image Switching
+   ========================================== */
+/* Light theme: show dark images, hide light images */
+.theme-light {
+    display: block;
+}
+
+.theme-dark {
+    display: none;
+}
+
+/* Dark theme: show light images, hide dark images */
+[data-theme="dark"] .theme-light {
+    display: none;
+}
+
+[data-theme="dark"] .theme-dark {
+    display: block;
+}
+
+/* ==========================================
    Global Styles & Reset
    ========================================== */
 * {
