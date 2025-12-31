@@ -541,3 +541,279 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     updateCarousel();
 });
+
+// ==========================================
+// Flowing Particles Network Animation
+// ==========================================
+(function() {
+    const canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationId;
+    let mouseX = -1000;
+    let mouseY = -1000;
+    
+    // Configuration
+    const config = {
+        particleCount: 75,
+        particleSize: { min: 1, max: 3 },
+        speed: { min: 0.2, max: 0.6 },
+        connectionDistance: 120,
+        mouseRadius: 200,          // Larger area of effect
+        mouseForce: 0.15,          // Stronger push force
+        // Theme-specific settings
+        dark: {
+            particleOpacity: 0.6,
+            lineOpacity: 0.2
+        },
+        light: {
+            particleOpacity: 0.7,
+            lineOpacity: 0.25        // Increased for light theme visibility
+        }
+    };
+    
+    // Get theme colors - Option A: Cyan for dark, Indigo for light
+    function getColors() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            return {
+                particle: '34, 211, 238',    // Cyan-400 (#22D3EE)
+                line: '96, 165, 250',        // Blue-400 (keeping lines blue)
+                particleOpacity: config.dark.particleOpacity,
+                lineOpacity: config.dark.lineOpacity
+            };
+        } else {
+            return {
+                particle: '79, 70, 229',     // Indigo-600 (#4F46E5)
+                line: '99, 102, 241',        // Indigo-500 (lines slightly lighter)
+                particleOpacity: config.light.particleOpacity,
+                lineOpacity: config.light.lineOpacity
+            };
+        }
+    }
+    
+    // Particle class
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = config.particleSize.min + Math.random() * (config.particleSize.max - config.particleSize.min);
+            // Store base speed so particle returns to gentle drift
+            this.baseSpeedX = (Math.random() - 0.5) * config.speed.max;
+            this.baseSpeedY = (Math.random() - 0.5) * config.speed.max;
+            this.speedX = this.baseSpeedX;
+            this.speedY = this.baseSpeedY;
+            this.opacity = 0.3 + Math.random() * 0.4;
+        }
+        
+        update() {
+            // Gentle floating movement
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            // Soft boundary - push particles back when near edges
+            const margin = 50;
+            const pushBack = 0.5;
+            
+            if (this.x < margin) {
+                this.speedX += pushBack;
+            } else if (this.x > canvas.width - margin) {
+                this.speedX -= pushBack;
+            }
+            
+            if (this.y < margin) {
+                this.speedY += pushBack;
+            } else if (this.y > canvas.height - margin) {
+                this.speedY -= pushBack;
+            }
+            
+            // Hard boundary - keep particles on screen
+            this.x = Math.max(5, Math.min(canvas.width - 5, this.x));
+            this.y = Math.max(5, Math.min(canvas.height - 5, this.y));
+            
+            // Strong mouse interaction - particles push away dramatically
+            const dx = this.x - mouseX;
+            const dy = this.y - mouseY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < config.mouseRadius && dist > 0) {
+                // Exponential force - stronger when closer
+                const force = Math.pow((config.mouseRadius - dist) / config.mouseRadius, 2) * config.mouseForce;
+                const pushX = (dx / dist) * force * 50;
+                const pushY = (dy / dist) * force * 50;
+                
+                this.x += pushX;
+                this.y += pushY;
+                
+                // Add some velocity for momentum effect (reduced)
+                this.speedX += pushX * 0.05;
+                this.speedY += pushY * 0.05;
+            }
+            
+            // Gradually return to original gentle drift speed
+            this.speedX += (this.baseSpeedX - this.speedX) * 0.02;
+            this.speedY += (this.baseSpeedY - this.speedY) * 0.02;
+            
+            // Clamp speed to prevent runaway
+            const maxSpeed = config.speed.max * 2;
+            this.speedX = Math.max(-maxSpeed, Math.min(maxSpeed, this.speedX));
+            this.speedY = Math.max(-maxSpeed, Math.min(maxSpeed, this.speedY));
+        }
+        
+        draw(colors) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${colors.particle}, ${this.opacity * colors.particleOpacity})`;
+            ctx.fill();
+            
+            // Add subtle glow effect for contrast particles
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${colors.particle}, ${this.opacity * colors.particleOpacity * 0.2})`;
+            ctx.fill();
+        }
+    }
+    
+    // Draw connections between nearby particles
+    function drawConnections(colors) {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < config.connectionDistance) {
+                    let opacity = (1 - dist / config.connectionDistance) * colors.lineOpacity;
+                    let lineWidth = 0.5;
+                    
+                    // Brighten connections near mouse
+                    const midX = (particles[i].x + particles[j].x) / 2;
+                    const midY = (particles[i].y + particles[j].y) / 2;
+                    const mouseDist = Math.sqrt(Math.pow(midX - mouseX, 2) + Math.pow(midY - mouseY, 2));
+                    
+                    if (mouseDist < config.mouseRadius) {
+                        const boost = 1 + (1 - mouseDist / config.mouseRadius) * 2;
+                        opacity *= boost;
+                        lineWidth = 0.5 + (1 - mouseDist / config.mouseRadius) * 1;
+                    }
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(${colors.line}, ${Math.min(opacity, 0.8)})`;
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+    
+    // Initialize particles
+    function initParticles() {
+        particles = [];
+        const count = Math.min(config.particleCount, Math.floor((canvas.width * canvas.height) / 15000));
+        for (let i = 0; i < count; i++) {
+            particles.push(new Particle());
+        }
+    }
+    
+    // Animation loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const colors = getColors();
+        
+        // Update and draw particles
+        particles.forEach(p => {
+            p.update();
+            p.draw(colors);
+        });
+        
+        // Draw connections
+        drawConnections(colors);
+        
+        animationId = requestAnimationFrame(animate);
+    }
+    
+    // Resize handler
+    function resize() {
+        const hero = canvas.parentElement;
+        canvas.width = hero.offsetWidth;
+        canvas.height = hero.offsetHeight;
+        initParticles();
+    }
+    
+    // Mouse tracking
+    function handleMouseMove(e) {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+    }
+    
+    function handleMouseLeave() {
+        mouseX = -1000;
+        mouseY = -1000;
+    }
+    
+    // Touch support for mobile
+    function handleTouchStart(e) {
+        if (e.touches.length > 0) {
+            const rect = canvas.getBoundingClientRect();
+            mouseX = e.touches[0].clientX - rect.left;
+            mouseY = e.touches[0].clientY - rect.top;
+        }
+    }
+    
+    function handleTouchMove(e) {
+        if (e.touches.length > 0) {
+            const rect = canvas.getBoundingClientRect();
+            mouseX = e.touches[0].clientX - rect.left;
+            mouseY = e.touches[0].clientY - rect.top;
+        }
+    }
+    
+    function handleTouchEnd() {
+        // Keep the last touch position for a moment, then fade out
+        setTimeout(() => {
+            mouseX = -1000;
+            mouseY = -1000;
+        }, 300);
+    }
+    
+    // Initialize
+    function init() {
+        resize();
+        animate();
+        
+        // Mouse interaction (desktop)
+        canvas.parentElement.addEventListener('mousemove', handleMouseMove);
+        canvas.parentElement.addEventListener('mouseleave', handleMouseLeave);
+        
+        // Touch interaction (mobile)
+        canvas.parentElement.addEventListener('touchstart', handleTouchStart, { passive: true });
+        canvas.parentElement.addEventListener('touchmove', handleTouchMove, { passive: true });
+        canvas.parentElement.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
+    
+    // Event listeners
+    window.addEventListener('resize', debounce(resize, 200));
+    
+    // Start when DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+    
+    // Cleanup
+    window.addEventListener('beforeunload', () => {
+        if (animationId) cancelAnimationFrame(animationId);
+    });
+    
+    console.log('✓ Gradient + Particles background initialized');
+})();
