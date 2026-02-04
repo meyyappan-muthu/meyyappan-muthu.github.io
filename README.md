@@ -55,12 +55,18 @@ meyyappan-muthu.github.io/
 ├── script.js               # Interactive features
 ├── favicon.svg             # Site favicon (MM logo)
 ├── images/                 # Image assets
-│   ├── profile-photo.jpg   # Professional headshot
-│   └── mey_bg.jpg         # About section background
+│   ├── profile/            # Profile images
+│   │   ├── profile-photo-dark.png
+│   │   ├── profile-photo-light.png
+│   │   └── mey_bg.jpg     # About section background
+│   └── testimonials/       # Testimonial avatars
 ├── logos/                  # Company logos
-│   ├── trimble.png
-│   ├── conduent.png
-│   └── span.png
+│   ├── trimble_logo.png
+│   ├── conduent_logo.svg
+│   └── span_logo.png
+├── pcb-visual/             # PCB animation project
+│   ├── index.html
+│   └── script.js
 └── README.md              # This file
 ```
 
@@ -164,6 +170,9 @@ Visit: `http://localhost:8000`
 ## 🔄 Updates & Maintenance
 
 This portfolio is actively maintained. Recent updates:
+- **Jan 2025**: Dynamic footer year generation
+- **Jan 2025**: Reorganized images into profile folder structure
+- **Jan 2025**: Advanced image loading optimizations (lazy loading, aspect ratios, smooth fade-in)
 - **Dec 2024**: Full redesign with modern UI
 - **Dec 2024**: Added testimonials carousel
 - **Dec 2024**: Mobile responsiveness improvements

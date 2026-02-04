@@ -31,6 +31,14 @@ function updateExperienceYears() {
 // Run on page load
 document.addEventListener('DOMContentLoaded', updateExperienceYears);
 
+// Update footer year
+document.addEventListener('DOMContentLoaded', function() {
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+});
+
 // ==========================================
 // Font Loading Verification
 // ==========================================
@@ -378,15 +386,75 @@ if (techMarquee) {
 // ==========================================
 // Loading Animation for Images
 // ==========================================
-const profileImage = document.querySelector('.hero-image');
-if (profileImage) {
-    profileImage.addEventListener('load', function() {
-        this.style.opacity = '1';
+// Smooth fade-in for hero images only
+function handleImageLoad() {
+    // Only apply fade-in to hero images
+    const heroImages = document.querySelectorAll('.hero-image');
+    
+    heroImages.forEach(img => {
+        // Add fade-in class
+        img.classList.add('fade-in');
+        
+        // If image is already complete (cached), show it immediately
+        if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+        } else {
+            // Add load event listener for images not yet loaded
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+            
+            img.addEventListener('error', function() {
+                console.log('Image failed to load:', this.src);
+                // Still show with reduced opacity
+                this.classList.add('loaded');
+                this.style.opacity = '0.5';
+            });
+        }
     });
     
-    profileImage.addEventListener('error', function() {
-        console.log('Profile image failed to load, using placeholder gradient');
+    // Ensure all other images are visible (no fade-in)
+    const allOtherImages = document.querySelectorAll('img:not(.hero-image)');
+    allOtherImages.forEach(img => {
+        // Make sure they're visible
+        img.style.opacity = '1';
+        
+        // Log if any image fails to load
+        img.addEventListener('error', function() {
+            console.log('Image failed to load:', this.src);
+        });
     });
+    
+    // Stop shimmer effect on about image when loaded
+    const aboutImage = document.querySelector('.about-image');
+    const aboutImageContainer = document.querySelector('.about-image-container');
+    
+    if (aboutImage && aboutImageContainer) {
+        if (aboutImage.complete && aboutImage.naturalHeight !== 0) {
+            // Image already loaded
+            aboutImageContainer.classList.add('loaded');
+        } else {
+            // Wait for image to load
+            aboutImage.addEventListener('load', function() {
+                aboutImageContainer.classList.add('loaded');
+            });
+            
+            aboutImage.addEventListener('error', function() {
+                // Stop shimmer even on error
+                aboutImageContainer.classList.add('loaded');
+            });
+        }
+    }
+}
+
+// Run on DOM ready
+document.addEventListener('DOMContentLoaded', handleImageLoad);
+
+// Also run immediately for any images that loaded before DOMContentLoaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleImageLoad);
+} else {
+    handleImageLoad();
 }
 
 // ==========================================

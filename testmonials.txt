@@ -1,0 +1,123 @@
+ <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Colleagues Say</h2>
+            <p class="section-intro">
+                Testimonials from peers and leaders I've worked with across different organizations.
+            </p>
+        </div>
+
+        <!-- Testimonials Carousel with Navigation -->
+        <div class="testimonials-marquee-wrapper">
+            <!-- Previous Button -->
+            <button class="testimonial-nav testimonial-nav-prev" id="testimonialPrev" aria-label="Previous testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+
+            <!-- Next Button -->
+            <button class="testimonial-nav testimonial-nav-next" id="testimonialNext" aria-label="Next testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </button>
+
+            <div class="testimonials-marquee">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Meyyappan consistently demonstrates exceptional technical depth in platform engineering. His ability to modernize legacy systems while maintaining operational stability is remarkable."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Shunmugavel Mariappan</h4>
+                                <p>Director, Engineering Manager</p>
+                                <p class="company">Trimble Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Mey joined my team as a Trade-In, and having him on the team has truly been valuable. He is calm, composed, and consistent in his work, and I have never seen him lose focus under pressure. He enjoys taking on new challenges and does not rest until the task is completed. His dedication is evident in his willingness to step up even on holidays when needed. Mey is a dependable team member and a great asset to any team."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Peter Yengaran Samuel</h4>
+                                <p>Co-Founder & Chief Operating Officer</p>
+                                <p class="company">Avaniral Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Working with Meyyappan on distributed systems was a great experience. He has a strong grasp of architectural patterns and consistently delivers scalable solutions."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Saravana Dhinakaran</h4>
+                                <p>Technical Architect</p>
+                                <p class="company">Congruent Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Meyyappan's approach to AI integration is both pragmatic and production-ready. He doesn't just implement features, he thinks through the entire system impact."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Paddy Sundaram</h4>
+                                <p>Business Manager</p>
+                                <p class="company">IBM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "His mentorship helped the team elevate their technical skills. Meyyappan brings both strategic thinking and hands-on execution to every project."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Sarah Lee</h4>
+                                <p>Staff Engineer</p>
+                                <p class="company">Trimble Inc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Indicator -->
+            <div class="testimonial-dots" id="testimonialDots">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+                <div class="testimonial-dot" data-index="3"></div>
+                <div class="testimonial-dot" data-index="4"></div>
+            </div>
+        </div>
+    </section>

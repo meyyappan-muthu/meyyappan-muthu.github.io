@@ -60,8 +60,8 @@
     <nav class="nav" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-logo">
-                <img src="images/profile-photo-dark.png" alt="Meyyappan Muthu" class="nav-logo-image theme-light">
-                <img src="images/profile-photo-light.png" alt="Meyyappan Muthu" class="nav-logo-image theme-dark">
+                <img src="images/profile/profile-photo-dark.png" alt="Meyyappan Muthu" class="nav-logo-image theme-light" loading="eager">
+                <img src="images/profile/profile-photo-light.png" alt="Meyyappan Muthu" class="nav-logo-image theme-dark" loading="eager">
                 <span class="nav-logo-text">Meyyappan Muthu</span>
             </a>
             <ul class="nav-menu" id="navMenu">
@@ -70,7 +70,7 @@
                 <li><a href="#expertise" class="nav-link">Expertise</a></li>
                 <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <!--<li><a href="#testimonials" class="nav-link">Testimonials</a></li>-->
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -87,8 +87,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-image-wrapper">
-                    <img src="images/profile-photo-dark.png" alt="Meyyappan Muthu" class="hero-image theme-light">
-                    <img src="images/profile-photo-light.png" alt="Meyyappan Muthu" class="hero-image theme-dark">
+                    <img src="images/profile/profile-photo-dark.png" alt="Meyyappan Muthu" class="hero-image theme-light" loading="eager" fetchpriority="high">
+                    <img src="images/profile/profile-photo-light.png" alt="Meyyappan Muthu" class="hero-image theme-dark" loading="eager" fetchpriority="high">
                 </div>
                 
                 <h1 class="hero-title">
@@ -191,7 +191,7 @@
                     </div>
                 </div>
                 <div class="about-image-container">
-                    <img src="images/mey_bg.jpg" alt="Meyyappan Muthukaruppan" class="about-image">
+                    <img src="images/profile/mey_bg.jpg" alt="Meyyappan Muthukaruppan" class="about-image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -324,6 +324,10 @@
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
                                 <span>FastAPI</span>
                             </div>
+                            <div class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                                <span>Jupyter</span>
+                            </div>
                         </div>
                         <!-- Duplicate for seamless loop -->
                         <div class="tech-marquee-track" aria-hidden="true">
@@ -355,70 +359,144 @@
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
                                 <span>FastAPI</span>
                             </div>
+                            <div class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                                <span>Jupyter</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Row 2: Databases & Data -->
+                <!-- Row 2: AI & Tools -->
                 <div class="tech-marquee-row reverse">
                     <div class="tech-marquee">
                         <div class="tech-marquee-track">
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-                                <span>MongoDB</span>
+                                <img src="https://api.iconify.design/simple-icons:langchain.svg" alt="LangChain">
+                                <span>LangChain</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
-                                <span>SQL Server</span>
+                                <img src="logos/claude_logo.png" alt="Claude">
+                                <span>Claude</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-                                <span>PostgreSQL</span>
+                                <img src="https://api.iconify.design/simple-icons:openai.svg" alt="Azure OpenAI">
+                                <span>Azure OpenAI</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
-                                <span>Redis</span>
+                                <img src="https://cdn.simpleicons.org/ollama" alt="Ollama">
+                                <span>Ollama</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
-                                <span>Pandas</span>
+                                <img src="logos/huggingface.png" alt="Hugging Face">
+                                <span>Hugging Face</span>
                             </div>
                             <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="currentColor" class="tech-icon-custom">
-                                    <circle cx="24" cy="24" r="20" opacity="0.2"/>
-                                    <circle cx="24" cy="24" r="12"/>
+                                <img src="logos/langfuse_logo.png" alt="Langfuse">
+                                <span>Langfuse</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/langsmith_logo.png" alt="LangSmith">
+                                <span>LangSmith</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/langgraph_logo.png" alt="LangGraph">
+                                <span>LangGraph</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_ai_search.png" alt="Azure AI Search">
+                                <span>Azure AI Search</span>
+                            </div>
+                            <div class="tech-badge">
+                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
+                                    <path d="M12 18h8v8h-8z" fill="currentColor" opacity="0.3"/>
+                                    <path d="M28 18h8v8h-8z" fill="currentColor" opacity="0.6"/>
+                                    <path d="M12 30h8v6h-8z" fill="currentColor" opacity="0.9"/>
+                                    <path d="M28 30h8v6h-8z" fill="currentColor"/>
+                                    <path d="M20 12h8v24h-8z" stroke="currentColor" stroke-width="2" fill="none"/>
                                 </svg>
-                                <span>Vector DB</span>
+                                <span>RAGAS</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/guardrails_ai.png" alt="Guardrails AI">
+                                <span>Guardrails AI</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/mcp.png" alt="MCP">
+                                <span>MCP</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="https://cdn.simpleicons.org/cursor" alt="Cursor">
+                                <span>Cursor</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/antigravity.png" alt="Antigravity">
+                                <span>Antigravity</span>
                             </div>
                         </div>
                         <!-- Duplicate for seamless loop -->
                         <div class="tech-marquee-track" aria-hidden="true">
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-                                <span>MongoDB</span>
+                                <img src="https://api.iconify.design/simple-icons:langchain.svg" alt="LangChain">
+                                <span>LangChain</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
-                                <span>SQL Server</span>
+                                <img src="logos/claude_logo.png" alt="Claude">
+                                <span>Claude</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-                                <span>PostgreSQL</span>
+                                <img src="https://api.iconify.design/simple-icons:openai.svg" alt="Azure OpenAI">
+                                <span>Azure OpenAI</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
-                                <span>Redis</span>
+                                <img src="https://cdn.simpleicons.org/ollama" alt="Ollama">
+                                <span>Ollama</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
-                                <span>Pandas</span>
+                                <img src="logos/huggingface.png" alt="Hugging Face">
+                                <span>Hugging Face</span>
                             </div>
                             <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="currentColor" class="tech-icon-custom">
-                                    <circle cx="24" cy="24" r="20" opacity="0.2"/>
-                                    <circle cx="24" cy="24" r="12"/>
+                                <img src="logos/langfuse_logo.png" alt="Langfuse">
+                                <span>Langfuse</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/langsmith_logo.png" alt="LangSmith">
+                                <span>LangSmith</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/langgraph_logo.png" alt="LangGraph">
+                                <span>LangGraph</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_ai_search.png" alt="Azure AI Search">
+                                <span>Azure AI Search</span>
+                            </div>
+                            <div class="tech-badge">
+                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
+                                    <path d="M12 18h8v8h-8z" fill="currentColor" opacity="0.3"/>
+                                    <path d="M28 18h8v8h-8z" fill="currentColor" opacity="0.6"/>
+                                    <path d="M12 30h8v6h-8z" fill="currentColor" opacity="0.9"/>
+                                    <path d="M28 30h8v6h-8z" fill="currentColor"/>
+                                    <path d="M20 12h8v24h-8z" stroke="currentColor" stroke-width="2" fill="none"/>
                                 </svg>
-                                <span>Vector DB</span>
+                                <span>RAGAS</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/guardrails_ai.png" alt="Guardrails AI">
+                                <span>Guardrails AI</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/mcp.png" alt="MCP">
+                                <span>MCP</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="https://cdn.simpleicons.org/cursor" alt="Cursor">
+                                <span>Cursor</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/antigravity.png" alt="Antigravity">
+                                <span>Antigravity</span>
                             </div>
                         </div>
                     </div>
@@ -429,12 +507,44 @@
                     <div class="tech-marquee">
                         <div class="tech-marquee-track">
                             <div class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                                <span>Azure</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_functions.png" alt="Azure Functions">
+                                <span>Azure Functions</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_service_bus.png" alt="Azure Service Bus">
+                                <span>Service Bus</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_front_door.png" alt="Azure Front Door">
+                                <span>Front Door</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_app_insights.png" alt="Azure App Insights">
+                                <span>App Insights</span>
+                            </div>
+                            <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
                                 <span>AWS</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-                                <span>Azure</span>
+                                <img src="logos/aws_lambda.png" alt="AWS Lambda">
+                                <span>AWS Lambda</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/aws_api_gateway.png" alt="AWS API Gateway">
+                                <span>API Gateway</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/aws_sqs.png" alt="AWS SQS">
+                                <span>SQS</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/aws_cloudformation.png" alt="AWS CloudFormation">
+                                <span>CloudFormation</span>
                             </div>
                             <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
@@ -448,12 +558,44 @@
                         <!-- Duplicate for seamless loop -->
                         <div class="tech-marquee-track" aria-hidden="true">
                             <div class="tech-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                                <span>Azure</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_functions.png" alt="Azure Functions">
+                                <span>Azure Functions</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_service_bus.png" alt="Azure Service Bus">
+                                <span>Service Bus</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_front_door.png" alt="Azure Front Door">
+                                <span>Front Door</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/azure_app_insights.png" alt="Azure App Insights">
+                                <span>App Insights</span>
+                            </div>
+                            <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
                                 <span>AWS</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
-                                <span>Azure</span>
+                                <img src="logos/aws_lambda.png" alt="AWS Lambda">
+                                <span>AWS Lambda</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/aws_api_gateway.png" alt="AWS API Gateway">
+                                <span>API Gateway</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/aws_sqs.png" alt="AWS SQS">
+                                <span>SQS</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/aws_cloudformation.png" alt="AWS CloudFormation">
+                                <span>CloudFormation</span>
                             </div>
                             <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
@@ -467,114 +609,76 @@
                     </div>
                 </div>
 
-                <!-- Row 4: AI & Tools -->
+                <!-- Row 4: Databases & Data -->
                 <div class="tech-marquee-row reverse">
                     <div class="tech-marquee">
                         <div class="tech-marquee-track">
                             <div class="tech-badge">
-                                <img src="https://api.iconify.design/simple-icons:langchain.svg" alt="LangChain">
-                                <span>LangChain</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                                <span>MongoDB</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://api.iconify.design/simple-icons:anthropic.svg?color=%23d97757" alt="Claude">
-                                <span>Claude</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                                <span>SQL Server</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://api.iconify.design/simple-icons:openai.svg" alt="Azure OpenAI">
-                                <span>Azure OpenAI</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                <span>PostgreSQL</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.simpleicons.org/ollama" alt="Ollama">
-                                <span>Ollama</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                                <span>Redis</span>
                             </div>
                             <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
-                                    <path d="M12 18h8v8h-8z" fill="currentColor" opacity="0.3"/>
-                                    <path d="M28 18h8v8h-8z" fill="currentColor" opacity="0.6"/>
-                                    <path d="M12 30h8v6h-8z" fill="currentColor" opacity="0.9"/>
-                                    <path d="M28 30h8v6h-8z" fill="currentColor"/>
-                                    <path d="M20 12h8v24h-8z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                                <span>RAG</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                                <span>Pandas</span>
                             </div>
                             <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
-                                    <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M24 8v16l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="24" cy="24" r="3" fill="currentColor"/>
-                                </svg>
-                                <span>MCP</span>
+                                <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/qdrant.svg" alt="Qdrant">
+                                <span>Qdrant</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
-                                <span>Jupyter</span>
+                                <img src="logos/aws_s3.svg" alt="AWS S3">
+                                <span>AWS S3</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.simpleicons.org/cursor" alt="Cursor">
-                                <span>Cursor</span>
-                            </div>
-                            <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
-                                    <circle cx="24" cy="38" r="4" fill="currentColor"/>
-                                    <path d="M22 34Q22 28 22 24Q22 16 24 8M26 34Q26 28 26 24Q26 16 24 8" stroke="currentColor" stroke-width="2.5"/>
-                                    <circle cx="24" cy="8" r="3" fill="currentColor"/>
-                                    <path d="M18 12Q20 10 24 10Q28 10 30 12" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-                                </svg>
-                                <span>Antigravity</span>
+                                <img src="logos/azure_storage.png" alt="Azure Blob Storage">
+                                <span>Azure Blob Storage</span>
                             </div>
                         </div>
                         <!-- Duplicate for seamless loop -->
                         <div class="tech-marquee-track" aria-hidden="true">
                             <div class="tech-badge">
-                                <img src="https://api.iconify.design/simple-icons:langchain.svg" alt="LangChain">
-                                <span>LangChain</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                                <span>MongoDB</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://api.iconify.design/simple-icons:anthropic.svg?color=%23d97757" alt="Claude">
-                                <span>Claude</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                                <span>SQL Server</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://api.iconify.design/simple-icons:openai.svg" alt="Azure OpenAI">
-                                <span>Azure OpenAI</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                <span>PostgreSQL</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.simpleicons.org/ollama" alt="Ollama">
-                                <span>Ollama</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                                <span>Redis</span>
                             </div>
                             <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
-                                    <path d="M12 18h8v8h-8z" fill="currentColor" opacity="0.3"/>
-                                    <path d="M28 18h8v8h-8z" fill="currentColor" opacity="0.6"/>
-                                    <path d="M12 30h8v6h-8z" fill="currentColor" opacity="0.9"/>
-                                    <path d="M28 30h8v6h-8z" fill="currentColor"/>
-                                    <path d="M20 12h8v24h-8z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                                <span>RAG</span>
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                                <span>Pandas</span>
                             </div>
                             <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
-                                    <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M24 8v16l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="24" cy="24" r="3" fill="currentColor"/>
-                                </svg>
-                                <span>MCP</span>
+                                <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/qdrant.svg" alt="Qdrant">
+                                <span>Qdrant</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
-                                <span>Jupyter</span>
+                                <img src="logos/aws_s3.svg" alt="AWS S3">
+                                <span>AWS S3</span>
                             </div>
                             <div class="tech-badge">
-                                <img src="https://cdn.simpleicons.org/cursor" alt="Cursor">
-                                <span>Cursor</span>
-                            </div>
-                            <div class="tech-badge">
-                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-icon-custom">
-                                    <circle cx="24" cy="38" r="4" fill="currentColor"/>
-                                    <path d="M22 34Q22 28 22 24Q22 16 24 8M26 34Q26 28 26 24Q26 16 24 8" stroke="currentColor" stroke-width="2.5"/>
-                                    <circle cx="24" cy="8" r="3" fill="currentColor"/>
-                                    <path d="M18 12Q20 10 24 10Q28 10 30 12" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-                                </svg>
-                                <span>Antigravity</span>
+                                <img src="logos/azure_storage.png" alt="Azure Blob Storage">
+                                <span>Azure Blob Storage</span>
                             </div>
                         </div>
                     </div>
@@ -593,6 +697,10 @@
                                 <span>GitHub Actions</span>
                             </div>
                             <div class="tech-badge">
+                                <img src="logos/bamboo.png" alt="Bamboo">
+                                <span>Bamboo CI/CD</span>
+                            </div>
+                            <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">
                                 <span>Postman</span>
                             </div>
@@ -607,6 +715,22 @@
                             <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
                                 <span>Notion</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/sonarqube.png" alt="SonarQube">
+                                <span>SonarQube SAST</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/snyk.webp" alt="Snyk">
+                                <span>Snyk Containers</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/mend.png" alt="Mend">
+                                <span>Mend Open Source</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/contrast.webp" alt="Contrast Security">
+                                <span>Contrast Security</span>
                             </div>
                         </div>
                         <!-- Duplicate for seamless loop -->
@@ -620,6 +744,10 @@
                                 <span>GitHub Actions</span>
                             </div>
                             <div class="tech-badge">
+                                <img src="logos/bamboo.png" alt="Bamboo">
+                                <span>Bamboo CI/CD</span>
+                            </div>
+                            <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">
                                 <span>Postman</span>
                             </div>
@@ -634,6 +762,22 @@
                             <div class="tech-badge">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
                                 <span>Notion</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/sonarqube.png" alt="SonarQube">
+                                <span>SonarQube</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/snyk.webp" alt="Snyk">
+                                <span>Snyk</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/mend.png" alt="Mend">
+                                <span>Mend</span>
+                            </div>
+                            <div class="tech-badge">
+                                <img src="logos/contrast.png" alt="Contrast Security">
+                                <span>Contrast</span>
                             </div>
                         </div>
                     </div>
@@ -671,7 +815,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <img src="logos/trimble_logo.png" alt="Trimble Inc." class="company-logo">
+                            <img src="logos/trimble_logo.png" alt="Trimble Inc." class="company-logo" loading="lazy">
                         </div>
                         
                         <div class="expandable-content">
@@ -740,7 +884,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <img src="logos/conduent_logo.svg" alt="Conduent" class="company-logo">
+                            <img src="logos/conduent_logo.svg" alt="Conduent" class="company-logo" loading="lazy">
                         </div>
                         
                         <div class="expandable-content">
@@ -786,7 +930,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <img src="logos/span_logo.png" alt="Span Technology Services" class="company-logo">
+                            <img src="logos/span_logo.png" alt="Span Technology Services" class="company-logo" loading="lazy">
                         </div>
                         
                         <div class="expandable-content">
@@ -817,135 +961,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section - Infinite Marquee -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Colleagues Say</h2>
-            <p class="section-intro">
-                Testimonials from peers and leaders I've worked with across different organizations.
-            </p>
-        </div>
-
-        <!-- Testimonials Carousel with Navigation -->
-        <div class="testimonials-marquee-wrapper">
-            <!-- Previous Button -->
-            <button class="testimonial-nav testimonial-nav-prev" id="testimonialPrev" aria-label="Previous testimonial">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"/>
-                </svg>
-            </button>
-
-            <!-- Next Button -->
-            <button class="testimonial-nav testimonial-nav-next" id="testimonialNext" aria-label="Next testimonial">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"/>
-                </svg>
-            </button>
-
-            <div class="testimonials-marquee">
-                <div class="testimonials-track" id="testimonialsTrack">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card">
-                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-                        </svg>
-                        <p class="testimonial-text">
-                            "Meyyappan consistently demonstrates exceptional technical depth in platform engineering. His ability to modernize legacy systems while maintaining operational stability is remarkable."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="https://ui-avatars.com/api/?name=John+Doe&size=80&background=2563eb&color=fff&bold=true" alt="John Doe" class="author-avatar">
-                            <div class="author-details">
-                                <h4>John Doe</h4>
-                                <p>Engineering Manager</p>
-                                <p class="company">Trimble Inc.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-                        </svg>
-                        <p class="testimonial-text">
-                            "Working with Meyyappan on distributed systems was a great experience. He has a strong grasp of architectural patterns and consistently delivers scalable solutions."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="https://ui-avatars.com/api/?name=Jane+Smith&size=80&background=7c3aed&color=fff&bold=true" alt="Jane Smith" class="author-avatar">
-                            <div class="author-details">
-                                <h4>Jane Smith</h4>
-                                <p>Senior Software Architect</p>
-                                <p class="company">Conduent</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-                        </svg>
-                        <p class="testimonial-text">
-                            "Meyyappan's approach to AI integration is both pragmatic and production-ready. He doesn't just implement features, he thinks through the entire system impact."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="https://ui-avatars.com/api/?name=Michael+Brown&size=80&background=059669&color=fff&bold=true" alt="Michael Brown" class="author-avatar">
-                            <div class="author-details">
-                                <h4>Michael Brown</h4>
-                                <p>Product Manager</p>
-                                <p class="company">Trimble Inc.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial-card">
-                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-                        </svg>
-                        <p class="testimonial-text">
-                            "His mentorship helped the team elevate their technical skills. Meyyappan brings both strategic thinking and hands-on execution to every project."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="https://ui-avatars.com/api/?name=Sarah+Lee&size=80&background=dc2626&color=fff&bold=true" alt="Sarah Lee" class="author-avatar">
-                            <div class="author-details">
-                                <h4>Sarah Lee</h4>
-                                <p>Staff Engineer</p>
-                                <p class="company">Span Technology</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 5 -->
-                    <div class="testimonial-card">
-                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-                        </svg>
-                        <p class="testimonial-text">
-                            "Meyyappan's leadership in adopting AI technologies was instrumental in our modernization efforts. He balances innovation with operational excellence."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="https://ui-avatars.com/api/?name=David+Kumar&size=80&background=f59e0b&color=fff&bold=true" alt="David Kumar" class="author-avatar">
-                            <div class="author-details">
-                                <h4>David Kumar</h4>
-                                <p>Technical Lead</p>
-                                <p class="company">Trimble Inc.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dots Indicator -->
-            <div class="testimonial-dots" id="testimonialDots">
-                <div class="testimonial-dot active" data-index="0"></div>
-                <div class="testimonial-dot" data-index="1"></div>
-                <div class="testimonial-dot" data-index="2"></div>
-                <div class="testimonial-dot" data-index="3"></div>
-                <div class="testimonial-dot" data-index="4"></div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Contact Section with Form -->
     <section id="contact" class="contact">
@@ -1013,7 +1029,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Meyyappan Muthukaruppan, Staff Software Engineer.</p>
+            <p>&copy; <span id="currentYear"></span> Meyyappan Muthukaruppan, Staff Software Engineer.</p>
             <p class="footer-location">📍 Chennai, India</p>
         </div>
     </footer>
