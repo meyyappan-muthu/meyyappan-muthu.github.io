@@ -69,8 +69,9 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#expertise" class="nav-link">Expertise</a></li>
                 <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+                <!--<li><a href="#projects" class="nav-link">Projects</a></li>-->
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <!--<li><a href="#testimonials" class="nav-link">Testimonials</a></li>-->
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -811,6 +812,76 @@
         </div>
     </section>
 
+    <!-- Featured Projects Section -->
+    <!--
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-intro">
+                Exploring emerging technologies through hands-on experimentation and practical implementation.
+            </p>
+
+            <div class="project-carousel">
+                <div class="project-slides">
+                    <div class="project-slide active">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3 class="project-title">Intelligent User Interaction Modeling</h3>
+                                <p class="project-tagline">Making apps feel smart by predicting user intent</p>
+                            </div>
+
+                            <div class="project-problem">
+                                <p><strong>The Challenge:</strong> 80% of users abandon apps due to poor experience — not missing features. Static workflows and reactive API loading create invisible friction.</p>
+                            </div>
+
+                            <div class="project-solution">
+                                <h4>How It Works</h4>
+                                <ul class="solution-list">
+                                    <li><strong>Sequential ML Model</strong> learns user behavior patterns over time</li>
+                                    <li><strong>Real-time predictions</strong> for next likely actions and API preloading</li>
+                                    <li><strong>SDK & REST API</strong> for seamless integration with existing applications</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-meta-row">
+                                <div class="project-tech">
+                                    <h4>Tech Stack</h4>
+                                    <div class="tech-badges">
+                                        <span class="tech-badge-small">TypeScript</span>
+                                        <span class="tech-badge-small">Machine Learning</span>
+                                        <span class="tech-badge-small">Sequential Models</span>
+                                        <span class="tech-badge-small">Azure Storage</span>
+                                        <span class="tech-badge-small">REST API</span>
+                                    </div>
+                                </div>
+
+                                <div class="project-impact">
+                                    <h4>Impact</h4>
+                                    <div class="impact-list">
+                                        <span class="impact-badge">⚡ Faster load times</span>
+                                        <span class="impact-badge">🎯 Better conversions</span>
+                                        <span class="impact-badge">💎 Higher retention</span>
+                                        <span class="impact-badge">📊 Improved SLA</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-architecture">
+                                <h4>System Architecture</h4>
+                                <img src="images/projects/user-interaction-architecture.png" alt="User Interaction Modeling Architecture" class="architecture-diagram" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-nav" style="display: none;">
+                    <button class="nav-dot active" data-slide="0" aria-label="Project 1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
@@ -985,7 +1056,94 @@
         </div>
     </section>
 
-   
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Colleagues Say</h2>
+            <p class="section-intro">
+                Testimonials from peers and leaders I've worked with across different organizations.
+            </p>
+        </div>
+
+        <!-- Testimonials Carousel with Navigation -->
+        <div class="testimonials-marquee-wrapper">
+            <!-- Previous Button -->
+            <button class="testimonial-nav testimonial-nav-prev" id="testimonialPrev" aria-label="Previous testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+
+            <!-- Next Button -->
+            <button class="testimonial-nav testimonial-nav-next" id="testimonialNext" aria-label="Next testimonial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </button>
+
+            <div class="testimonials-marquee">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "As an Engineering leader who's had the privilege of working closely with Mey at Trimble, I wanted to share what makes him such a standout colleague and leader. Mey is one of those rare people who combines deep technical ability with real maturity and an incredibly positive attitude. He's my default go-to whenever I need to dive deep into complex technical architecture, system design trade-offs, or even people-leadership situations. His thinking is thorough, balanced, and always grounded—he doesn't just chase shiny new things; he focuses on what actually moves the needle for the business while keeping quality high. What stands out most is how dependable he is. When you delegate something to Mey, you can truly switch context and not worry about it again. He owns it end-to-end: he thinks through the edges, rallies the right people, pushes through roadblocks, and makes sure it lands with impact. That level of ownership is invaluable in high-stakes environments. Over the years we've collaborated on multiple greenfield initiatives and tough 0→1 builds at Trimble—delivering complex, high-impact platform solutions under real pressure. Watching his growth has been genuinely impressive: the continuous upskilling, the evolution from strong individual contributor to someone who shapes direction and mentors others. He's reliable, level-headed, technically sharp, and just a great human to have in the room. Proud to have worked alongside him."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Shunmugavel Mariappan</h4>
+                                <p>Director, Engineering Manager</p>
+                                <p class="company">Trimble Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Mey joined my team as a Trade-In, and having him on the team has truly been valuable. He is calm, composed, and consistent in his work, and I have never seen him lose focus under pressure. He enjoys taking on new challenges and does not rest until the task is completed. His dedication is evident in his willingness to step up even on holidays when needed. Mey is a dependable team member and a great asset to any team."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Peter Yengaran Samuel</h4>
+                                <p>Co-Founder & Chief Operating Officer</p>
+                                <p class="company">Avaniral Technologies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="testimonial-text">
+                            "Mey is an exceptional talent with deep technical expertise and a rapid learning curve. A dedicated leader and problem solver, he has delivered impact far beyond his years."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-details">
+                                <h4>Saravana Dhinakaran</h4>
+                                <p>Technical Architect</p>
+                                <p class="company">Congruent Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Indicator -->
+            <div class="testimonial-dots" id="testimonialDots">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section with Form -->
     <section id="contact" class="contact">

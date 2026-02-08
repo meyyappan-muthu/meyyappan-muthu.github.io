@@ -529,26 +529,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('testimonialNext');
     const dotsContainer = document.getElementById('testimonialDots');
     
-    if (!track || !prevBtn || !nextBtn) return;
+    if (!track || !prevBtn || !nextBtn || !dotsContainer) {
+        return;
+    }
     
     const cards = track.querySelectorAll('.testimonial-card');
     const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+    
     let currentIndex = 0;
     let cardsPerView = getCardsPerView();
     let maxIndex = Math.max(0, cards.length - cardsPerView);
     
     function getCardsPerView() {
-        const width = window.innerWidth;
-        if (width <= 1024) return 1; // One card for both mobile and tablet
-        return 3; // Three cards for desktop
+        return 1; // One card at a time for all screen sizes
     }
     
     function updateCarousel() {
-        const cardWidth = cards[0].offsetWidth;
-        // Get the actual gap from computed styles
-        const trackStyles = window.getComputedStyle(track);
-        const gap = parseInt(trackStyles.gap) || 24;
-        const offset = -(currentIndex * (cardWidth + gap));
+        if (cards.length === 0) return;
+        
+        // Get the width of the marquee container (visible area)
+        const marqueeWidth = track.parentElement.offsetWidth;
+        
+        // Get the margin-right from the card (this is our gap)
+        const cardStyles = window.getComputedStyle(cards[0]);
+        const marginRight = parseInt(cardStyles.marginRight) || 48;
+        
+        // Each slide moves by marquee width + margin
+        const slideWidth = marqueeWidth + marginRight;
+        const offset = -(currentIndex * slideWidth);
+        
         track.style.transform = `translateX(${offset}px)`;
         
         // Update dots
@@ -566,13 +575,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
     }
     
-    prevBtn.addEventListener('click', function() {
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         if (currentIndex > 0) {
             goToSlide(currentIndex - 1);
         }
     });
     
-    nextBtn.addEventListener('click', function() {
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         if (currentIndex < maxIndex) {
             goToSlide(currentIndex + 1);
         }
@@ -580,7 +591,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Dot navigation
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
+        dot.addEventListener('click', function(e) {
+            e.preventDefault();
             goToSlide(index);
         });
     });
@@ -606,8 +618,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 250);
     });
     
-    // Initialize
-    updateCarousel();
+    // Initialize with a slight delay to ensure DOM is fully rendered
+    setTimeout(() => {
+        updateCarousel();
+    }, 100);
 });
 
 // ==========================================
