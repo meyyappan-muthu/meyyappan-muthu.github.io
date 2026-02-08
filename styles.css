@@ -2108,7 +2108,16 @@ section {
     }
 
     .testimonial-text {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .author-details h4 {
         font-size: 0.95rem;
+    }
+
+    .author-details p {
+        font-size: 0.8rem;
     }
 
     .quote-mark {
@@ -2511,6 +2520,19 @@ section {
         -webkit-overflow-scrolling: touch;
         white-space: pre;
         word-break: keep-all;
+    }
+
+    .testimonial-text {
+        font-size: 0.8rem;
+        line-height: 1.55;
+    }
+
+    .author-details h4 {
+        font-size: 0.9rem;
+    }
+
+    .author-details p {
+        font-size: 0.75rem;
     }
 
     .tech-marquee-content span {
