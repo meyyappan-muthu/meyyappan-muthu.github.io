@@ -547,17 +547,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCarousel() {
         if (cards.length === 0) return;
         
-        // Get the width of the marquee container (visible area)
-        const marqueeWidth = track.parentElement.offsetWidth;
+        // Get the exact pixel width of the visible container
+        const containerWidth = track.parentElement.offsetWidth;
         
-        // Get the margin-right from the card (this is our gap)
-        const cardStyles = window.getComputedStyle(cards[0]);
-        const marginRight = parseInt(cardStyles.marginRight) || 48;
+        // Set each card to exactly the container width (no CSS percentage ambiguity)
+        cards.forEach(card => {
+            card.style.width = containerWidth + 'px';
+        });
         
-        // Each slide moves by marquee width + margin
-        const slideWidth = marqueeWidth + marginRight;
-        const offset = -(currentIndex * slideWidth);
-        
+        // Slide offset = index * container width (no gap/margin math needed)
+        const offset = -(currentIndex * containerWidth);
         track.style.transform = `translateX(${offset}px)`;
         
         // Update dots
